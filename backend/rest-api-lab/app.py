@@ -11,10 +11,10 @@ def create_app():
     # Register Middlewares
     register_middlewares(app)
 
+    @app.route("/")
+    def home():
+        return {"message": "Backend Server is running"}
+
     return app
 
 app = create_app()
-
-@app.route("/")
-def home():
-    return {"message": "Backend Server is running"}
